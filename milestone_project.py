@@ -32,3 +32,11 @@ class Deck:
             deck_comp += '\n' + card.__str__()
         return deck_comp
 
+    def shuffle(self):
+        random.shuffle(self.deck)
+
+    def deal(self):
+        single_card = self.deck.pop()
+        return single_card
+
+
