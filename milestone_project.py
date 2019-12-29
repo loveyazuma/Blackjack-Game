@@ -15,7 +15,7 @@ class Card:
         self.rank = rank
 
     def __str__(self):
-        return self.rank + "of" + self.suit
+        return self.rank + " of " + self.suit
 
 
 class Deck:
@@ -40,3 +40,22 @@ class Deck:
         return single_card
 
 
+class Hand:
+    def __init__(self):
+        self.cards = []  # empty list that will hold the cards
+        self.value = 0  # start with a value of zero
+        self.aces = 0
+
+    def add_card(self, card):
+        self.cards.append(card)
+        self.value += values[card.rank]
+
+        #   track the aces
+
+#
+# test_deck = Deck()
+# test_deck.shuffle()
+#
+# test_player = Hand()
+# test_player.add_card(test_deck.deal())
+# print(test_player.value)
