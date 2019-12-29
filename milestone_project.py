@@ -51,7 +51,8 @@ class Hand:
         self.value += values[card.rank]
 
         #   track the aces
-
+        if card.rank == 'Ace':
+            self.aces += 1
 #
 # test_deck = Deck()
 # test_deck.shuffle()
