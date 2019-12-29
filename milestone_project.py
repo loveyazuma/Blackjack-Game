@@ -53,6 +53,15 @@ class Hand:
         #   track the aces
         if card.rank == 'Ace':
             self.aces += 1
+
+    def adjust_for_ace(self):
+        #   if total value is greater than 21 and the player has an ace then change the ace to a 1
+        while self.value > 21 and self.aces:
+            #   subtract 10 from the total value
+            self.value -= 10
+            #   remove one ace from the hand of the player
+            self.ace -= 1
+
 #
 # test_deck = Deck()
 # test_deck.shuffle()
