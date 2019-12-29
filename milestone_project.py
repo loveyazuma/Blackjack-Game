@@ -17,3 +17,12 @@ class Card:
     def __str__(self):
         print('%s of %s' % (self.rank, self.suit))
 
+
+class Deck:
+
+    def __init__(self):
+        self.deck = []
+        for suit in suits:
+            for rank in ranks:
+                self.deck.append(Card(suit, rank))
+                
