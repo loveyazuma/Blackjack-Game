@@ -15,7 +15,7 @@ class Card:
         self.rank = rank
 
     def __str__(self):
-        print('%s of %s' % (self.rank, self.suit))
+        return self.rank + "of" + self.suit
 
 
 class Deck:
@@ -25,4 +25,10 @@ class Deck:
         for suit in suits:
             for rank in ranks:
                 self.deck.append(Card(suit, rank))
-                
+
+    def __str__(self):
+        deck_comp = ''
+        for card in self.deck:
+            deck_comp += '\n' + card.__str__()
+        return deck_comp
+
